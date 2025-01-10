@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Flying Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #87ceeb, #f0e68c);
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            animation: fly 10s linear infinite;
+        }
+
+        .wing {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #9514ff, #9514ff);
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: flap 0.5s ease-in-out infinite alternate;
+        }
+
+        .wing.left {
+            transform: rotate(-45deg);
+            left: -25px;
+        }
+
+        .wing.right {
+            transform: rotate(45deg);
+            right: -25px;
+        }
+
+        @keyframes flap {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes fly {
+            0% {
+                transform: translate(-10%, 100%) rotate(0deg);
+            }
+            25% {
+                transform: translate(25%, 50%) rotate(20deg);
+            }
+            50% {
+                transform: translate(50%, 10%) rotate(-20deg);
+            }
+            75% {
+                transform: translate(75%, 50%) rotate(20deg);
+            }
+            100% {
+                transform: translate(110%, 100%) rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="butterfly">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+    </div>
+</body>
+</html>
